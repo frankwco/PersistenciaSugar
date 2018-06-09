@@ -25,9 +25,13 @@ public class MainActivity extends AppCompatActivity {
         //Salvar o objeto no banco
         lancamento.save();
 
+
+        Lancamento lancamentoId = Lancamento.findById(Lancamento.class,2);
+        lancamentoId.delete();
+
+
         List<Lancamento> lb = Lancamento.listAll(Lancamento.class);
         Log.i("MainActivity","Quantidade no Banco: "+lb.size());
-
 
     }
 }
